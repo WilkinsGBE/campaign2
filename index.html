@@ -156,37 +156,6 @@
       .fade-up { opacity: 1; transform: none; transition: none; }
     }
 
-    /* ============================================================
-       STATUS BAR WILDCARD ELEMENT
-       ============================================================ */
-    .statusbar {
-      background: var(--bg-surface);
-      border-bottom: 1px solid var(--border);
-      padding: 7px 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 28px;
-      flex-wrap: wrap;
-      font-family: var(--font-d);
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      color: var(--text-3);
-      text-transform: uppercase;
-    }
-    .sb-item { display: flex; align-items: center; gap: 7px; }
-    .sb-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      animation: blink 2.2s ease-in-out infinite;
-    }
-    .sb-live { color: var(--accent); font-weight: 700; }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
 
     /* ============================================================
        NAVIGATION
@@ -295,7 +264,7 @@
       line-height: 1.0;
       color: var(--text);
     }
-    h1 { font-size: clamp(40px, 5.8vw, 68px); }
+    h1 { font-size: clamp(32px, 5.8vw, 68px); }
     h2 { font-size: clamp(32px, 4.5vw, 54px); }
     h3 {
       font-family: var(--font-d);
@@ -950,7 +919,6 @@
       .cal-box { padding: 16px 14px; border-radius: 8px; }
       .cal-iframe { height: 100vh; min-height: 100vh; }
       .nav-btn { display: none; }
-      .statusbar { font-size: 10px; gap: 14px; }
       .stats-row { gap: 1px; max-width: 100%; }
       .stat-num { font-size: 26px; }
       .stat { padding: 14px 8px; }
@@ -961,18 +929,6 @@
   </style>
 </head>
 <body>
-
-  <!-- ============================================================
-       STATUS BAR WILDCARD: Live system status feel
-       ============================================================ -->
-  <div class="statusbar" role="banner" aria-label="System status">
-    <div class="sb-item">
-      <span class="sb-dot" aria-hidden="true"></span>
-      <span class="sb-live">AI Receptionist: Active</span>
-    </div>
-    <div class="sb-item">Response Time: 60 Seconds</div>
-    <div class="sb-item">Exclusive Leads: Not Shared</div>
-  </div>
 
   <!-- ============================================================
        NAVIGATION
