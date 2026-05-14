@@ -308,10 +308,10 @@
     }
 
     .hero-grid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
       position: relative;
       z-index: 1;
     }
@@ -319,10 +319,9 @@
     .hero-copy {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: flex-start;
+      text-align: left;
       gap: 14px;
-      max-width: 740px;
       width: 100%;
     }
 
@@ -369,7 +368,6 @@
 
     .hero-aside {
       width: 100%;
-      max-width: 900px;
     }
 
     .cal-box {
@@ -393,8 +391,8 @@
     }
     .cal-iframe {
       width: 100%;
-      min-height: 100vh;
-      height: 100vh;
+      min-height: 700px;
+      height: 700px;
       border: none;
       border-radius: 8px;
       display: block;
@@ -894,7 +892,8 @@
        RESPONSIVE TABLET
        ============================================================ */
     @media (max-width: 880px) {
-      .hero-grid { gap: 28px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-copy { align-items: center; text-align: center; }
       .steps { grid-template-columns: 1fr; }
       .diff-grid { grid-template-columns: 1fr; }
       .g-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -917,7 +916,7 @@
       .faq-a-inner { padding: 16px 20px; }
       .btn { font-size: 16px; padding: 15px 24px; max-width: 100%; }
       .cal-box { padding: 16px 14px; border-radius: 8px; }
-      .cal-iframe { height: 100vh; min-height: 100vh; }
+      .cal-iframe { height: 680px; min-height: 680px; }
       .nav-btn { display: none; }
       .stats-row { gap: 1px; max-width: 100%; }
       .stat-num { font-size: 26px; }
