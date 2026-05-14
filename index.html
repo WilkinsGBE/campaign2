@@ -339,10 +339,10 @@
     }
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
       position: relative;
       z-index: 1;
     }
@@ -350,8 +350,11 @@
     .hero-copy {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 14px;
-      padding-top: 4px;
+      max-width: 740px;
+      width: 100%;
     }
 
     .hero-hl { margin: 0; }
@@ -360,7 +363,7 @@
       font-size: 17px;
       color: var(--text-2);
       line-height: 1.7;
-      max-width: 500px;
+      max-width: 580px;
     }
 
     .stats-row {
@@ -371,6 +374,8 @@
       overflow: hidden;
       background: var(--border-sub);
       gap: 1px;
+      width: 100%;
+      max-width: 420px;
     }
     .stat {
       background: var(--bg-card);
@@ -394,7 +399,8 @@
     }
 
     .hero-aside {
-      note: right column;
+      width: 100%;
+      max-width: 900px;
     }
 
     .cal-box {
@@ -418,8 +424,8 @@
     }
     .cal-iframe {
       width: 100%;
-      min-height: 500px;
-      height: 500px;
+      min-height: 620px;
+      height: 620px;
       border: none;
       border-radius: 8px;
       display: block;
@@ -919,9 +925,7 @@
        RESPONSIVE TABLET
        ============================================================ */
     @media (max-width: 880px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-      .hero-sub { max-width: 100%; }
-      .btn { max-width: 100%; }
+      .hero-grid { gap: 28px; }
       .steps { grid-template-columns: 1fr; }
       .diff-grid { grid-template-columns: 1fr; }
       .g-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -944,13 +948,13 @@
       .faq-a-inner { padding: 16px 20px; }
       .btn { font-size: 16px; padding: 15px 24px; max-width: 100%; }
       .cal-box { padding: 16px 14px; border-radius: 8px; }
-      .cal-iframe { height: 480px; min-height: 480px; }
+      .cal-iframe { height: 560px; min-height: 560px; }
       .nav-btn { display: none; }
       .statusbar { font-size: 10px; gap: 14px; }
-      .stats-row { gap: 1px; }
+      .stats-row { gap: 1px; max-width: 100%; }
       .stat-num { font-size: 26px; }
       .stat { padding: 14px 8px; }
-      .trustpilot-badge { justify-content: flex-start; }
+      .trustpilot-badge { justify-content: center; }
       .hero { padding: 32px 0 44px; }
       .hero-copy { gap: 12px; }
     }
@@ -987,7 +991,7 @@
     <div class="wrap">
       <div class="hero-grid">
 
-        <!-- LEFT: Copy -->
+        <!-- COPY -->
         <div class="hero-copy">
           <div class="eyebrow">AI Growth System for Local Service Businesses</div>
 
@@ -1043,7 +1047,7 @@
           <p class="hero-note">No commitment. Free 30-minute growth audit. We'll show you the exact ROI math for your business.</p>
         </div>
 
-        <!-- RIGHT: Calendar embed -->
+        <!-- CALENDAR (full-width, below copy) -->
         <div class="hero-aside" id="book">
           <div class="cal-box">
             <div class="cal-title">Book Your Free Growth Audit</div>
