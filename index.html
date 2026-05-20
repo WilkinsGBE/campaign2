@@ -281,59 +281,45 @@
        HERO
        ============================================================ */
     .hero {
-      padding: 44px 0 56px;
+      padding: 52px 0 64px;
       position: relative;
       overflow: hidden;
     }
-    /* Grid dot background */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background-image:
-        radial-gradient(circle, rgba(45,127,249,0.07) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(45,127,249,0.07) 1px, transparent 1px);
       background-size: 48px 48px;
       pointer-events: none;
     }
-    /* Radial glow */
     .hero::after {
       content: "";
       position: absolute;
-      top: -10%;
-      left: -5%;
-      width: 55%;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
       height: 120%;
-      background: radial-gradient(ellipse at center, rgba(45,127,249,0.04) 0%, transparent 65%);
+      background: radial-gradient(ellipse at center, rgba(127,232,71,0.04) 0%, transparent 65%);
       pointer-events: none;
     }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
+    .hero-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
       position: relative;
       z-index: 1;
     }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      gap: 14px;
-      width: 100%;
-    }
-
     .hero-hl { margin: 0; }
-
     .hero-sub {
       font-size: 17px;
       color: var(--text-2);
       line-height: 1.7;
-      max-width: 580px;
+      max-width: 560px;
     }
-
     .stats-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -342,8 +328,8 @@
       overflow: hidden;
       background: var(--border-sub);
       gap: 1px;
-      width: 100%;
       max-width: 420px;
+      width: 100%;
     }
     .stat {
       background: var(--bg-card);
@@ -365,83 +351,136 @@
       letter-spacing: 0.08em;
       font-weight: 500;
     }
-
-    .hero-aside {
-      width: 100%;
-    }
-
-    .cal-box {
-      background: var(--bg-card);
-      border: 1px solid rgba(45, 127, 249, 0.15);
-      border-radius: 12px;
-      padding: 24px 20px 20px;
-    }
-    .cal-title {
-      font-family: var(--font-d);
-      font-size: 20px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .cal-sub {
-      font-size: 13px;
-      color: var(--text-2);
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
-    .cal-iframe {
-      width: 100%;
-      min-height: 700px;
-      height: 700px;
-      border: none;
-      border-radius: 8px;
-      display: block;
-    }
-    .cal-note {
-      margin-top: 12px;
-      font-size: 12px;
-      color: var(--text-3);
-      font-style: italic;
-      line-height: 1.6;
-    }
-
     .hero-note {
       font-size: 13px;
       color: var(--text-3);
     }
 
-    /* Trustpilot badge */
-    .trustpilot-badge {
+    /* ============================================================
+       BOOK SECTION
+       ============================================================ */
+    .book-sec {
+      padding: 80px 0 96px;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-sub);
+    }
+    .book-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .book-copy {
       display: flex;
-      align-items: center;
-      gap: 8px;
+      flex-direction: column;
+      gap: 20px;
+      position: sticky;
+      top: 80px;
     }
-    .tp-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text);
-    }
-    .tp-stars {
+    .book-copy h2 { margin: 0; }
+    .book-perks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
-      gap: 2px;
+      flex-direction: column;
+      gap: 14px;
     }
-    .tp-star {
-      width: 22px;
-      height: 22px;
-      background: #00B67A;
+    .book-perk {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .tp-wordmark {
-      font-size: 13px;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
       color: var(--text-2);
+      line-height: 1.55;
+    }
+    .book-chk {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .book-guarantee {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: rgba(127, 232, 71, 0.05);
+      border: 1px solid rgba(127, 232, 71, 0.18);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .book-g-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .book-g-row strong { color: var(--accent); }
+    .book-g-label {
+      font-family: var(--font-d);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .book-cal iframe {
+      width: 100%;
+      min-height: 700px;
+      height: 700px;
+      border: none;
+      border-radius: 10px;
+      display: block;
     }
 
     /* ============================================================
        PAIN
        ============================================================ */
+    .vsl-sec {
+      padding: 60px 0 48px;
+      background: var(--bg);
+    }
+    .vsl-label {
+      font-family: var(--font-d);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .vsl-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(127, 232, 71, 0.2);
+      box-shadow: 0 0 60px rgba(127, 232, 71, 0.08);
+    }
+    .vsl-iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .vsl-sub {
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-2);
+      margin-top: 20px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
     .pain-sec {
       background: var(--bg-surface);
       border-top: 1px solid var(--border-sub);
@@ -892,12 +931,10 @@
        RESPONSIVE TABLET
        ============================================================ */
     @media (max-width: 880px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
-      .hero-copy { align-items: center; text-align: center; }
       .steps { grid-template-columns: 1fr; }
-      .diff-grid { grid-template-columns: 1fr; }
       .g-grid { grid-template-columns: 1fr; gap: 16px; }
-      .disc-inner { grid-template-columns: 1fr; gap: 40px; }
+      .book-inner { grid-template-columns: 1fr; gap: 40px; }
+      .book-copy { position: static; }
       .foot-top { grid-template-columns: 1fr; gap: 32px; }
     }
 
@@ -915,15 +952,13 @@
       .faq-q { padding: 18px 20px; }
       .faq-a-inner { padding: 16px 20px; }
       .btn { font-size: 16px; padding: 15px 24px; max-width: 100%; }
-      .cal-box { padding: 16px 14px; border-radius: 8px; }
-      .cal-iframe { height: 680px; min-height: 680px; }
       .nav-btn { display: none; }
       .stats-row { gap: 1px; max-width: 100%; }
       .stat-num { font-size: 26px; }
       .stat { padding: 14px 8px; }
-      .trustpilot-badge { justify-content: center; }
       .hero { padding: 32px 0 44px; }
-      .hero-copy { gap: 12px; }
+      .book-sec { padding: 56px 0 72px; }
+      .book-cal iframe { min-height: 680px; height: 680px; }
     }
   </style>
 </head>
@@ -935,89 +970,55 @@
   <div class="nav-wrap">
     <nav aria-label="Main navigation">
       <a href="/" class="logo" aria-label="GBE Conversion home">GBE<em>.</em>CONVERSION</a>
-      <a href="#book" class="nav-btn" aria-label="Book your free growth audit">Book Your Free Audit</a>
+      <a href="https://api.leadconnectorhq.com/widget/bookings/ai-conversion-system" target="_blank" rel="noopener noreferrer" class="nav-btn" aria-label="Book your free growth audit">Book Your Free Audit</a>
     </nav>
   </div>
 
   <!-- ============================================================
-       SECTION 1: HERO
+       SECTION 1: HERO + VSL
        ============================================================ -->
   <section class="hero" aria-labelledby="hero-headline">
     <div class="wrap">
-      <div class="hero-grid">
+      <div class="hero-center">
 
-        <!-- COPY -->
-        <div class="hero-copy">
-          <div class="eyebrow">AI Growth System for Local Service Businesses</div>
+        <div class="eyebrow">AI Growth System for Home Service Contractors</div>
 
-          <!--
-            HEADLINE ALTERNATIVES uncomment to A/B test:
+        <h1 class="hero-hl" id="hero-headline">
+          We generate the leads.<br>
+          Our AI books the jobs.<br>
+          <span class="accent">You just show up.</span>
+        </h1>
 
-            ALT 1: <h1 class="hero-hl" id="hero-headline">Your calendar.<br><span class="accent">Full of booked jobs.</span><br>Without chasing<br>a single lead.</h1>
+        <p class="hero-sub">Facebook ads → exclusive leads → AI books the appointment in 60 seconds. Done for you. Guaranteed.</p>
 
-            ALT 2: <h1 class="hero-hl" id="hero-headline">Exclusive leads.<br>AI-booked appointments.<br><span class="accent">Full calendar. Guaranteed.</span></h1>
-
-            ALT 3: <h1 class="hero-hl" id="hero-headline">We generate the leads.<br>Our AI books the jobs.<br><span class="accent">You just show up.</span></h1>
-          -->
-          <h1 class="hero-hl" id="hero-headline">
-            Get <span class="accent">qualified, paying jobs</span><br>
-            booked into your calendar,<br>
-            <span class="accent">automatically.</span>
-          </h1>
-
-          <p class="hero-sub">
-            We run Facebook ads that bring exclusive customers to your business. Our AI qualifies them and books the appointment into your calendar within 60 seconds, so you show up to confirmed jobs instead of chasing cold leads.
-          </p>
-
-          <!-- TODO: Replace with official Trustpilot widget from https://business.trustpilot.com once reviews are live -->
-          <div class="trustpilot-badge" aria-label="Trustpilot rating: Excellent">
-            <span class="tp-label">Excellent</span>
-            <div class="tp-stars" aria-hidden="true">
-              <div class="tp-star"><svg width="13" height="13" viewBox="0 0 24 24" fill="white"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg></div>
-              <div class="tp-star"><svg width="13" height="13" viewBox="0 0 24 24" fill="white"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg></div>
-              <div class="tp-star"><svg width="13" height="13" viewBox="0 0 24 24" fill="white"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg></div>
-              <div class="tp-star"><svg width="13" height="13" viewBox="0 0 24 24" fill="white"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg></div>
-              <div class="tp-star"><svg width="13" height="13" viewBox="0 0 24 24" fill="white"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg></div>
-            </div>
-            <span class="tp-wordmark">Trustpilot</span>
-          </div>
-
-          <div class="stats-row" role="list" aria-label="System performance">
-            <div class="stat" role="listitem">
-              <div class="stat-num">24/7</div>
-              <div class="stat-lbl">AI Active</div>
-            </div>
-            <div class="stat" role="listitem">
-              <div class="stat-num">60s</div>
-              <div class="stat-lbl">Lead Response</div>
-            </div>
-            <div class="stat" role="listitem">
-              <div class="stat-num">100%</div>
-              <div class="stat-lbl">Done For You</div>
-            </div>
-          </div>
-
-          <a href="#book" class="btn" aria-label="Book your free growth audit">Book Your Free Growth Audit</a>
-
-          <p class="hero-note">No commitment. Free 30-minute growth audit. We'll show you the exact ROI math for your business.</p>
+        <!-- VSL VIDEO -->
+        <div class="vsl-wrap">
+          <iframe
+            class="vsl-iframe"
+            src="https://player.vimeo.com/video/1193799965?badge=0&autopause=0&player_id=0&app_id=58479"
+            title="GBE Conversion AI Growth System"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
 
-        <!-- CALENDAR (full-width, below copy) -->
-        <div class="hero-aside" id="book">
-          <div class="cal-box">
-            <div class="cal-title">Book Your Free Growth Audit</div>
-            <p class="cal-sub">Pick a time. 20 minutes. No commitment.</p>
-
-            <iframe
-              class="cal-iframe"
-              src="https://api.leadconnectorhq.com/widget/bookings/ai-conversion-system"
-              title="Book a Free Growth Audit"
-              aria-label="Calendar booking widget, select a time for your free growth audit"
-            ></iframe>
-
-            <p class="cal-note">We'll look at your current lead flow, find where you're losing clients, and show you the exact ROI math for your business.</p>
+        <div class="stats-row" role="list" aria-label="System performance">
+          <div class="stat" role="listitem">
+            <div class="stat-num">24/7</div>
+            <div class="stat-lbl">AI Active</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat-num">60s</div>
+            <div class="stat-lbl">Lead Response</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat-num">100%</div>
+            <div class="stat-lbl">Done For You</div>
           </div>
         </div>
+
+        <a href="https://api.leadconnectorhq.com/widget/bookings/ai-conversion-system" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Book your free growth audit">Book Your Free Growth Audit</a>
+        <p class="hero-note">Free 30-min call. No commitment. No pressure.</p>
 
       </div>
     </div>
@@ -1077,78 +1078,6 @@
   </section>
 
   <!-- ============================================================
-       SECTION 4: DIFFERENTIATOR
-       ============================================================ -->
-  <section class="diff-sec fade-up" aria-labelledby="diff-headline">
-    <div class="wrap">
-      <div class="eyebrow">Why GBE</div>
-      <h2 id="diff-headline">Other agencies give you leads.<br>We give you <span class="accent">booked jobs.</span></h2>
-
-      <div class="diff-grid">
-        <div class="diff-col diff-left" role="region" aria-label="What other agencies do">
-          <div class="diff-head">Every Other Agency</div>
-          <div role="list">
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" stroke="#565A53" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/></svg>
-              <span class="diff-txt">Run ads</span>
-            </div>
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" stroke="#565A53" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/></svg>
-              <span class="diff-txt">Hand you a spreadsheet</span>
-            </div>
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" stroke="#565A53" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/></svg>
-              <span class="diff-txt">"Good luck calling them back"</span>
-            </div>
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" stroke="#565A53" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/></svg>
-              <span class="diff-txt">You chase leads between jobs</span>
-            </div>
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" stroke="#565A53" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/></svg>
-              <span class="diff-txt">Half go cold</span>
-            </div>
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" stroke="#565A53" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/></svg>
-              <span class="diff-txt">You're frustrated</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="diff-col diff-right" role="region" aria-label="What GBE Conversion does">
-          <div class="diff-head">GBE Conversion</div>
-          <div role="list">
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><polyline points="2,9 7,14 16,4" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="diff-txt">Run ads. Exclusive leads only.</span>
-            </div>
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><polyline points="2,9 7,14 16,4" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="diff-txt">Leads hit your converting website</span>
-            </div>
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><polyline points="2,9 7,14 16,4" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="diff-txt">AI responds within 60 seconds</span>
-            </div>
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><polyline points="2,9 7,14 16,4" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="diff-txt">Qualifies and books the appointment</span>
-            </div>
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><polyline points="2,9 7,14 16,4" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="diff-txt">You show up to confirmed jobs</span>
-            </div>
-            <div class="diff-row" role="listitem">
-              <svg class="diff-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><polyline points="2,9 7,14 16,4" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="diff-txt">Calendar full</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
        SECTION 5: GUARANTEE
        ============================================================ -->
   <section class="fade-up" aria-labelledby="g-headline">
@@ -1182,174 +1111,73 @@
   </section>
 
   <!-- ============================================================
-       SECTION 6: WHAT YOU'LL DISCOVER ON THE CALL
+       SECTION 6: BOOK A CALL
        ============================================================ -->
-  <section class="disc-sec fade-up" aria-labelledby="disc-headline">
+  <section class="book-sec fade-up" id="book" aria-labelledby="book-headline">
     <div class="wrap">
-      <div class="disc-inner">
-        <div>
-          <div class="eyebrow">Free Growth Audit</div>
-          <h2 id="disc-headline">Here's what we'll cover on your call.</h2>
+      <div class="book-inner">
 
-          <ul class="disc-bullets" aria-label="Topics covered on your free growth audit">
-            <li class="disc-item fade-up">
-              <svg class="disc-chk" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <circle cx="10" cy="10" r="9" stroke="#34D399" stroke-width="1.4"/>
-                <polyline points="5.5,10 9,13.5 14.5,7.5" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- LEFT: COPY -->
+        <div class="book-copy">
+          <div class="eyebrow">Free Growth Audit</div>
+          <h2 id="book-headline">Pick a time.<br><span class="accent">30 minutes.<br>No commitment.</span></h2>
+
+          <ul class="book-perks" aria-label="What you get on the call">
+            <li class="book-perk">
+              <svg class="book-chk" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" stroke="#7AE840" stroke-width="1.4"/>
+                <polyline points="5.5,10 9,13.5 14.5,7.5" stroke="#7AE840" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <p>How many leads you're currently losing to missed calls and slow follow-up <em>(the number will surprise you)</em></p>
+              <span>See exactly how many leads you're losing right now to missed calls</span>
             </li>
-            <li class="disc-item fade-up">
-              <svg class="disc-chk" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <circle cx="10" cy="10" r="9" stroke="#34D399" stroke-width="1.4"/>
-                <polyline points="5.5,10 9,13.5 14.5,7.5" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <li class="book-perk">
+              <svg class="book-chk" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" stroke="#7AE840" stroke-width="1.4"/>
+                <polyline points="5.5,10 9,13.5 14.5,7.5" stroke="#7AE840" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <p>Why Facebook ads generate exclusive leads at a fraction of your Google and Angi spend</p>
+              <span>Live demo of the AI booking a job in real time</span>
             </li>
-            <li class="disc-item fade-up">
-              <svg class="disc-chk" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <circle cx="10" cy="10" r="9" stroke="#34D399" stroke-width="1.4"/>
-                <polyline points="5.5,10 9,13.5 14.5,7.5" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <li class="book-perk">
+              <svg class="book-chk" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" stroke="#7AE840" stroke-width="1.4"/>
+                <polyline points="5.5,10 9,13.5 14.5,7.5" stroke="#7AE840" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <p>A live demo of the AI receptionist booking a job in real time</p>
+              <span>The exact ROI math for your business, based on your ticket size</span>
             </li>
-            <li class="disc-item fade-up">
-              <svg class="disc-chk" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <circle cx="10" cy="10" r="9" stroke="#34D399" stroke-width="1.4"/>
-                <polyline points="5.5,10 9,13.5 14.5,7.5" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <li class="book-perk">
+              <svg class="book-chk" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" stroke="#7AE840" stroke-width="1.4"/>
+                <polyline points="5.5,10 9,13.5 14.5,7.5" stroke="#7AE840" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <p>The exact ROI math for your business, based on your revenue and average ticket size</p>
-            </li>
-            <li class="disc-item fade-up">
-              <svg class="disc-chk" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <circle cx="10" cy="10" r="9" stroke="#34D399" stroke-width="1.4"/>
-                <polyline points="5.5,10 9,13.5 14.5,7.5" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <p>Whether this system is a fit for your trade and market</p>
+              <span>Whether this system is a fit for your trade and market</span>
             </li>
           </ul>
-        </div>
 
-        <div class="cta-box fade-up">
-          <h3>Ready to see it for your business?</h3>
-          <p>30 minutes. No pressure. We'll show you exactly how the system works and give you the numbers for your market before you make any decision.</p>
-          <a href="#final-cta" class="btn" aria-label="Book your free growth audit">Book Your Free Growth Audit</a>
-          <p class="cta-note">Available Sun–Sat. Spots fill fast during peak season.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SECTION 7: FAQ
-       ============================================================ -->
-  <section class="fade-up" aria-labelledby="faq-headline">
-    <div class="wrap">
-      <div class="eyebrow">Questions</div>
-      <h2 id="faq-headline">Common questions.</h2>
-
-      <div class="faq-list" role="list" aria-label="Frequently asked questions">
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a1">
-            <span class="faq-q-txt">What trades does this work for?</span>
-            <svg class="faq-plus" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-              <line x1="9" y1="2" x2="9" y2="16"/><line x1="2" y1="9" x2="16" y2="9"/>
-            </svg>
-          </button>
-          <div class="faq-a" id="faq-a1" role="region">
-            <div class="faq-a-inner">HVAC, plumbing, roofing, electrical, landscaping, painting, general contracting. Any local service business where calls equal jobs. If you're booking appointments with homeowners, this system is built for you.</div>
+          <div class="book-guarantee" aria-label="Our guarantees">
+            <div class="book-g-label">Backed by two guarantees</div>
+            <div class="book-g-row">
+              <svg width="16" height="16" viewBox="0 0 38 38" fill="none" stroke="#7AE840" stroke-width="1.8" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M19 3L3 9v12c0 8.5 6.7 14.4 15.2 15.2.3 0 .5 0 .8 0C27.5 35.4 35 29.5 35 21V9L19 3z"/><polyline points="12,19 17,24 27,14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>10 booked appointments in 30 days</strong> — or we work free</span>
+            </div>
+            <div class="book-g-row">
+              <svg width="16" height="16" viewBox="0 0 38 38" fill="none" stroke="#7AE840" stroke-width="1.8" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M19 3L3 9v12c0 8.5 6.7 14.4 15.2 15.2.3 0 .5 0 .8 0C27.5 35.4 35 29.5 35 21V9L19 3z"/><polyline points="12,19 17,24 27,14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>15% more revenue in 90 days</strong> — or no additional charge</span>
+            </div>
           </div>
+
+          <p style="font-size:12px;color:var(--text-3);">Available Sun–Sat. Spots fill fast during peak season.</p>
         </div>
 
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a2">
-            <span class="faq-q-txt">How is this different from my current marketing agency?</span>
-            <svg class="faq-plus" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-              <line x1="9" y1="2" x2="9" y2="16"/><line x1="2" y1="9" x2="16" y2="9"/>
-            </svg>
-          </button>
-          <div class="faq-a" id="faq-a2" role="region">
-            <div class="faq-a-inner">Most agencies deliver leads and leave you to chase them. We generate exclusive leads AND our AI qualifies and books them into your calendar. You get booked jobs, not phone numbers.</div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a3">
-            <span class="faq-q-txt">How quickly does the system go live?</span>
-            <svg class="faq-plus" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-              <line x1="9" y1="2" x2="9" y2="16"/><line x1="2" y1="9" x2="16" y2="9"/>
-            </svg>
-          </button>
-          <div class="faq-a" id="faq-a3" role="region">
-            <div class="faq-a-inner">14 days from kickoff. Your ads, website, and AI are all built and launched within two weeks. Most clients see their first booked appointments in the first week of being live.</div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a4">
-            <span class="faq-q-txt">What if I already have a website?</span>
-            <svg class="faq-plus" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-              <line x1="9" y1="2" x2="9" y2="16"/><line x1="2" y1="9" x2="16" y2="9"/>
-            </svg>
-          </button>
-          <div class="faq-a" id="faq-a4" role="region">
-            <div class="faq-a-inner">We build a dedicated converting page specifically designed to turn ad clicks into booked appointments. Your existing website stays untouched. This runs alongside it.</div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a5">
-            <span class="faq-q-txt">Do I need to be tech-savvy?</span>
-            <svg class="faq-plus" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-              <line x1="9" y1="2" x2="9" y2="16"/><line x1="2" y1="9" x2="16" y2="9"/>
-            </svg>
-          </button>
-          <div class="faq-a" id="faq-a5" role="region">
-            <div class="faq-a-inner">No. This is 100% done for you. We build it, we run it, we optimize it. You just show up to booked jobs. Your only job is doing the work you're already great at.</div>
-          </div>
-        </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a6">
-            <span class="faq-q-txt">What's the catch?</span>
-            <svg class="faq-plus" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-              <line x1="9" y1="2" x2="9" y2="16"/><line x1="2" y1="9" x2="16" y2="9"/>
-            </svg>
-          </button>
-          <div class="faq-a" id="faq-a6" role="region">
-            <div class="faq-a-inner">There isn't one. If we don't deliver 10 booked appointments in 30 days, we keep working for free until we do. The risk is on us.</div>
-          </div>
+        <!-- RIGHT: CALENDAR -->
+        <div class="book-cal">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/bookings/ai-conversion-system"
+            title="Book a Free Growth Audit"
+            aria-label="Calendar booking widget"
+          ></iframe>
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SECTION 8: FINAL CTA
-       ============================================================ -->
-  <section class="final-sec" id="final-cta" aria-labelledby="final-headline">
-    <h2 class="final-hl" id="final-headline">
-      Peak season won't wait.<br>
-      <span class="accent">Neither should you.</span>
-    </h2>
-    <p class="final-sub">Every week without this system is another week of missed calls, lost jobs, and revenue going to your competitors.</p>
-
-    <div class="final-btn-wrap">
-      <a href="#final-cal" class="btn" aria-label="Book your free growth audit">Book Your Free Growth Audit</a>
-    </div>
-
-    <div class="final-cal-wrap" id="final-cal">
-      <div class="final-cal-lbl">Pick a time below. Spots are limited.</div>
-
-      <iframe
-        class="final-cal-iframe"
-        src="https://api.leadconnectorhq.com/widget/bookings/ai-conversion-system"
-        title="Book a Free Growth Audit"
-        aria-label="Calendar booking widget, select a time for your free growth audit"
-      ></iframe>
-
     </div>
   </section>
 
