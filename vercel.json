@@ -1,4 +1,7 @@
 {
+  "rewrites": [
+    { "source": "/fr", "destination": "/fr.html" }
+  ],
   "headers": [
     {
       "source": "/index.html",
